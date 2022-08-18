@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}B6eny Homepage {% endblock title %}</title>
+
+    <!-- Google Font -->
+    <!-- Css Styles -->
+      <link rel = "stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+      <link rel = "stylesheet" href="{% static 'nice-select.css' %}" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
+
+      <link rel = "stylesheet" href="{% static 'style.css' %}" type="text/css">
+      <link rel = "stylesheet" href="{% static 'slicknav.min.css' %}" type="text/css">
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+ <header class="header-section-other">
+        <div class="container-fluid">
+            <div class="logo">
+                {% with url_name=request.resolver_match.url_name %}
+
+                <a href="{%url 'home'%}"><img src="/media/images/b6eny.PNG" width="150" height="100" alt=""></a>
+            </div>
+            <div class="nav-menu">
+                <nav class="main-menu mobile-menu">
+                    <ul>
+                        <li class="{% if url_name == 'home' %} active {% endif %}"><a href="{%url 'home'%}">Home</a></li>
+
+                      <li class= "{% if url_name == 'create-category' %} active {% endif %}"><a  href="#">Categories </a>
+                            <ul class="sub-menu">
+                                <li><a href="/create/category">Add Category</a></li>
+                                <li><a href="categories.html">My Categories</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="{% if url_name == 'recipes' %} active {% endif %}" ><a href="{% url 'recipes' %}">Recipes</a>
+                            <ul class="sub-menu">
+                                <li><a href="{% url 'create-recipe' %}">Add Recipe</a></li>
+                                <li><a href="categories.html">My Recipes</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="{% if url_name == 'create-ingredient' %} active {% endif %}"><a href="recipe.html">Ingredients</a>
+                            <ul class="sub-menu">
+                                <li><a href="{% url 'create-ingredient' %}">Add Ingredient</a></li>
+                                <li><a href="categories.html">My Ingredients</a></li>
+
+                            </ul>
+                        </li>
+                    {% endwith %}
+                        {% if request.user.is_authenticated %}
+                         <li ><a href="{%url 'logout'%}">Logout</a></li>
+                        {% else %}
+                        <li ><a href="{%url 'login'%}">Login</a></li>
+                         <li><a href="{%url 'register'%}">Register</a></li>
+
+                        {% endif %}
+
+
+                    </ul>
+                </nav>
+                <div class="nav-right search-switch">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+
+<body>
+{% block content %}
+
+{% endblock %}
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/main.js"></script>
+</html>

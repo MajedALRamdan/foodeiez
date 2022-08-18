@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% load static %}
+
+<head>
+
+    <title>{% block title %} Add Category {% endblock title %}</title>
+
+</head>
+
+{% block content %}
+
+
+
+    <div class="">
+        <h1 class="d-flex align-items-center justify-content-center">Add Category</h1>
+       <br/> <br/>
+        <div class="container  rounded w-50 mb-5">
+        <form action="{% url 'create-category' %}" method="post" enctype="multipart/form-data" class="p-4">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <center>
+                <input class="btn btn-warning mt-4 fs-4 w-25" type="submit" value="Create">
+            </center>
+        </form>
+    </div>
+    </div>
+
+	<!-- Search model end -->
+
+    <!-- Js Plugins -->
+{% endblock content %}

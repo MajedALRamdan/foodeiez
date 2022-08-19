@@ -51,18 +51,27 @@
 
             <div class="mb-md-5 mt-md-4 pb-5">
 
-                    <form action="{% url 'login' %}" method="POST">
+                    <form action="{% url 'register' %}" method="POST">
             <!-- prettier-ignore -->
             {% csrf_token %}
-              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-              <p class="text-white-50 mb-5">Please enter your Username and password!</p>
-
-              <div class=" form-white mb-4" >
-                  <label class="form-label" for="form.id_username"  style="color: white">Username</label>
-                  <input type="text" id="form.id_username" class="form-control form-control-lg" name="{{ form.username.html_name}}" placeholder="Username" required autofocus>
+              <h2 class="fw-bold mb-2 text-uppercase">Register</h2>
+                         <div class=" form-white mb-4" >
+                  <label class="form-label" for="form.id_First_Name"  style="color: white">First Name</label>
+                  <input type="text" id="form.id_First_Name" class="form-control form-control-lg" name="{{ form.name.html_name}}" placeholder="name" required autofocus>
 
               </div>
 
+              <div class=" form-white mb-4" >
+                  <label class="form-label" for="form.id_username"  style="color: white">Username</label>
+                  <input type="text" id="form.id_username" class="form-control form-control-lg" name="{{ form.username.html_name}}" placeholder="Username">
+
+              </div>
+
+                         <div class=" form-white mb-4" >
+                  <label class="form-label" for="form.id_email"  style="color: white">Email</label>
+                  <input type="email" id="form.id_email" class="form-control form-control-lg" name="{{ form.email.html_name}}" placeholder="Email" >
+
+              </div>
               <div class=" form-white mb-4" >
                                   <label class="form-label" for="typePasswordX" style="color: white">Password</label>
 
@@ -70,7 +79,7 @@
               </div>
 
 
-              <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+              <button class="btn btn-outline-light btn-lg px-5" type="submit">Sign Up</button>
 
 
                     </form>
@@ -78,7 +87,7 @@
             </div>
 
             <div>
-              <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
+              <p class="mb-0"> Already have an account! <a href="{% url 'login' %}" class="text-white-50 fw-bold">Log In</a>
               </p>
             </div>
 

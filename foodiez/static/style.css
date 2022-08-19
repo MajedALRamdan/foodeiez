@@ -670,7 +670,7 @@ ol {
 
 .top-recipe-item .top-recipe-text .cat-name {
 	color: #fff;
-	background: #FC0254;
+	background: #023cfc;
 	display: inline-block;
 	font-size: 12px;
 	font-weight: 700;
@@ -1234,8 +1234,8 @@ ol {
 }
 
 .recipe-item .ri-text .cat-name {
-	color: #fff;
-	background: #FC0254;
+	color: #c01515;
+	background-color: #3c71a9;
 	display: inline-block;
 	font-size: 12px;
 	font-weight: 700;
@@ -1384,7 +1384,7 @@ ol {
 
 .cfr-item .cfr-item-text .cat-name {
 	color: #fff;
-	background: #FC0254;
+	background: #023cfc;
 	display: inline-block;
 	font-size: 12px;
 	font-weight: 700;
@@ -1418,7 +1418,7 @@ ol {
 
 .cfr-small-item .cfr-small-text .cat-name {
 	color: #fff;
-	background: #FC0254;
+	background: #026efc;
 	display: inline-block;
 	font-size: 12px;
 	font-weight: 700;
@@ -1800,7 +1800,7 @@ ol {
 
 .similar-item .similar-text .cat-name {
 	color: #fff;
-	background: #FC0254;
+	background: #0277fc;
 	display: inline-block;
 	font-size: 12px;
 	font-weight: 700;
@@ -2068,7 +2068,7 @@ ol {
 
 .about-right .sidebar .sidebar-item .sidebar-item-text .cat-name {
 	color: #fff;
-	background: #FC0254;
+	background: #028cfc;
 	display: inline-block;
 	font-size: 12px;
 	font-weight: 700;

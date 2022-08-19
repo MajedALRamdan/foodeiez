@@ -17,7 +17,7 @@
         <h1 class="d-flex align-items-center justify-content-center">Add Category</h1>
        <br/> <br/>
         <div class="container  rounded w-50 mb-5">
-        <form action="{% url 'create-category' %}" method="post" enctype="multipart/form-data" class="p-4">
+        <form action="{% url 'addcat' %}" method="post" enctype="multipart/form-data" class="p-4">
             {% csrf_token %}
             {% bootstrap_form form %}
             <center>

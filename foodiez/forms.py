@@ -1,8 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
 
-from food import models
-from food.models import Category, Ingredient
+from foodiez import models
 
 User = get_user_model()
 
@@ -25,29 +24,5 @@ class CategoryForm(forms.ModelForm):
         model = models.Category
         exclude = ["created_by"]
 
-
-class IngredientForm(forms.ModelForm):
-    class Meta:
-        model = models.Ingredient
-        fields = "__all__"
-        widgets = {
-            'name': forms.TextInput(attrs= {'class': 'form-control'}),
-            # 'image': forms.ImageField(attrs={'class': 'form-control'}),
-            'category_name': forms.Select(attrs={'class': 'form-control'}),
-        },
-
-
-
-
-
-class RecipeForm(forms.ModelForm):
-
-
-    class Meta:
-        model = models.Recipe
-        exclude = ["created_by"]
-        widgets = {
-            'ingredients': forms.CheckboxSelectMultiple,
-        }
 
 

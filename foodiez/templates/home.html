@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<head>
+
+    <title></title>
+
+
+
+</head>
+
+
+    {% block content %}
+    <section class="recipe-section spad">
+        <div class="container">
+            <main>
+                <article>
+                {% if categories %}
+                <section>
+                    <div class="row">
+
+                    {% for category in categories %}
+                <div class="col-lg-3 col-sm-6" >
+                    <div class="recipe-item">
+                        <a href="{%url 'home' %}"><img src={{ category.image.url}} alt=""></a>
+                        <div class="ri-text">
+                            <div class="cat-name"> fhvb {{ category.created_by.username }}</div>
+                            <a href="#">
+                                <h4>{{ category.name }}</h4>
+                            </a>
+                            <p> {{ category.description }} </p>       </div>
+                    </div>
+                </div>
+
+                    {% endfor %}
+                        {% else %}
+        <p>No Category yet.</p>
+        {% endif %}
+
+                    </div></section>
+            </article>
+            </main>
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock content %}
